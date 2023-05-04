@@ -72,6 +72,7 @@ namespace AnnonsWebAPI.Controllers
         }
 
         [HttpPut]
+        [Route("{id}")]
         public async Task<ActionResult<Advertisement>> UpdateProduct(Advertisement product)
         {
             // OBS: PUT Uppdaterar HELA SuperHero (ALLA properties)
@@ -81,7 +82,6 @@ namespace AnnonsWebAPI.Controllers
             {
                 return BadRequest("Superhero not found");
             }
-            adsToUpdate.Id = product.Id;
             adsToUpdate.Title = product.Title;
             adsToUpdate.Description = product.Description;
             adsToUpdate.Price = product.Price;
@@ -110,11 +110,5 @@ namespace AnnonsWebAPI.Controllers
             return Ok(await _dbContext.Advertisements.ToListAsync());
 
         }
-
-
-
-
-
-
     }
 }
