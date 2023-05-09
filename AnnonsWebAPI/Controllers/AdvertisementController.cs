@@ -46,8 +46,6 @@ namespace AnnonsWebAPI.Controllers
             return Ok(await _dbContext.Advertisements.ToListAsync());
 
         }
-
-
         [HttpGet]
         [Route("{id}")]
         //[Route("GetOne/{id:int}")]
@@ -68,7 +66,6 @@ namespace AnnonsWebAPI.Controllers
             _dbContext.Advertisements.Add(product);
             await _dbContext.SaveChangesAsync();
             return Ok(await _dbContext.Advertisements.ToListAsync());
-
         }
 
         [HttpPut]
@@ -91,7 +88,6 @@ namespace AnnonsWebAPI.Controllers
             await _dbContext.SaveChangesAsync();
 
             return Ok(await _dbContext.Advertisements.ToListAsync());
-
         }
 
         [HttpDelete]
