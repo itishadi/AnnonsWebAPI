@@ -17,28 +17,7 @@ namespace AnnonsWebAPI.Controllers
         }
 
 
-        private static List<Advertisement> ads = new List<Advertisement>
-        {
-            new Advertisement
-            {
-                Id = 1,
-                Title = "Spiderman",
-                Description = "Book",
-                Price=20,
-                IsActive=true,
-                DatePosted=new DateTime(2022,01,09)},
-
-
-
-            new Advertisement
-            {
-                Id = 2,
-                Title = "Ironman",
-                Description = "CD",
-                Price=30,
-                IsActive=false,
-                DatePosted=new DateTime(2022,01,10)},
-        };
+       
 
         [HttpGet]
         public async Task<ActionResult<List<Advertisement>>> GetAll()
